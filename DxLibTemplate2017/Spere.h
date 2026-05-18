@@ -8,7 +8,7 @@ public:
 	void Update();
 	void Draw();
 private:
-	VECTOR _centerPos = VGet(1820, 540, 0);
+	VECTOR _centerPos = VGet(960, 540, 0);
 	float _radius = 40;
 	int _divNum = 8;
 };
