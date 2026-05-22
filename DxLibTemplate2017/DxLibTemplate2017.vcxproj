@@ -126,11 +126,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="BulletManager.cpp" />
+    <ClCompile Include="CameraMove.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PlayerInput.cpp" />
     <ClCompile Include="Spere.cpp" />
     <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="BulletManager.h" />
+    <ClInclude Include="CameraMove.h" />
+    <ClInclude Include="PlayerInput.h" />
     <ClInclude Include="Spere.h" />
     <ClInclude Include="Vector2.h" />
   </ItemGroup>
