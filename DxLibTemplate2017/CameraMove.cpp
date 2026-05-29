@@ -13,6 +13,9 @@ void CameraMove::CameraMoveInput(VECTOR pos, VECTOR mousePos) {
     _yDifference = mousePos.y - 540;
     _yaw += _xDifference * _sensitivity;
     _pitch -= _yDifference * _sensitivity;
+    const float PITCH_LIMIT = 3.1415926f / 2.0f - 0.1f; // –ñ84“x
+    if (_pitch > PITCH_LIMIT) _pitch = PITCH_LIMIT;
+    if (_pitch < -PITCH_LIMIT) _pitch = -PITCH_LIMIT;
     _flontX = cos(_pitch) * sin(_yaw);
     _flontY = sin(_pitch);
     _flontZ = cos(_pitch) * cos(_yaw);

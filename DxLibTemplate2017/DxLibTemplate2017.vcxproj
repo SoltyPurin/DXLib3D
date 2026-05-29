@@ -131,7 +131,10 @@
     <ClCompile Include="CameraMove.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PlayerInput.cpp" />
+    <ClCompile Include="ShareClass.cpp" />
     <ClCompile Include="Spere.cpp" />
+    <ClCompile Include="Stage_Initializer.cpp" />
+    <ClCompile Include="Stage_Update.cpp" />
     <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -139,7 +142,9 @@
     <ClInclude Include="BulletManager.h" />
     <ClInclude Include="CameraMove.h" />
     <ClInclude Include="PlayerInput.h" />
+    <ClInclude Include="ShareClass.h" />
     <ClInclude Include="Spere.h" />
+    <ClInclude Include="Stage.h" />
     <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

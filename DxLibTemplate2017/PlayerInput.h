@@ -10,7 +10,10 @@ public:
 	void Update();
 private:
 	int _currentMousePosX, _currentMousePosY;
+	int _prevMousePosX, _prevMousePosY;
 	CameraMove* _camera;
 	BulletManager* _bulletManager;
+	float _mouseSensitivity = 0.005f;
+	float _yaw, _pitch;
 };
 
