@@ -1,5 +1,6 @@
 #include "CameraMove.h"
 #include "Vector2.h"
+#include <DxLib.h>
 CameraMove::CameraMove() {
 
 }
@@ -8,7 +9,16 @@ CameraMove::~CameraMove() {
 
 }
 
-void CameraMove::CameraMoveInput(VECTOR pos, VECTOR mousePos) {
+const VECTOR CameraMove::ReturnHorizontalForward() {
+    { return VGet(sin(_yaw), 0.0f, cos(_yaw)); }
+}
+
+const VECTOR CameraMove::ReturnHorizontalRight() {
+    { return VGet(cos(_yaw), 0.0f, -sin(_yaw)); }
+}
+
+void CameraMove::CameraMoveInput(VECTOR moveValue, VECTOR mousePos) {
+    //Ç±Ç±Ç©ÇÁÉJÉÅÉâÇÃéãì_à⁄ìÆÇÃåvéZ
     _xDifference = mousePos.x - 960;
     _yDifference = mousePos.y - 540;
     _yaw += _xDifference * _sensitivity;
@@ -19,9 +29,12 @@ void CameraMove::CameraMoveInput(VECTOR pos, VECTOR mousePos) {
     _flontX = cos(_pitch) * sin(_yaw);
     _flontY = sin(_pitch);
     _flontZ = cos(_pitch) * cos(_yaw);
-    float lookX = pos.x + _flontX;
-    float lookY = pos.y + _flontY;
-    float lookZ = pos.z + _flontZ;
+    _cameraPos.x += moveValue.x;
+    _cameraPos.z += moveValue.z;
 
-	SetCameraPositionAndTarget_UpVecY(pos, VGet(lookX, lookY, lookZ));
+    float lookX = _cameraPos.x + _flontX;
+    float lookY = _cameraPos.y + _flontY;
+    float lookZ = _cameraPos.z + _flontZ;
+
+	SetCameraPositionAndTarget_UpVecY(_cameraPos, VGet(lookX, lookY, lookZ));
 }

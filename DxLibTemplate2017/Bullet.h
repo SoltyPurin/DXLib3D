@@ -16,7 +16,7 @@ private:
 	VECTOR _moveDirection;
 	BulletManager& _bulletManager;
 	float _gravityPower = 5.5f;
-	float _bulletSpeed = 100;
+	float _bulletSpeed = 10;
 	float _bulletSize = 5;
 	float _bulletLifeTime = 5;
 	float _currentLifeTime = 0;
