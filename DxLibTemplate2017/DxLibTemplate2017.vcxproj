@@ -129,11 +129,14 @@
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BulletManager.cpp" />
     <ClCompile Include="CameraMove.cpp" />
+    <ClCompile Include="CollisionCalc.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ObstacleBox.cpp" />
     <ClCompile Include="PlayerInput.cpp" />
     <ClCompile Include="ShareClass.cpp" />
     <ClCompile Include="Spere.cpp" />
     <ClCompile Include="Stage_Initializer.cpp" />
+    <ClCompile Include="Stage_Load.cpp" />
     <ClCompile Include="Stage_Update.cpp" />
     <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
@@ -141,6 +144,8 @@
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="BulletManager.h" />
     <ClInclude Include="CameraMove.h" />
+    <ClInclude Include="CollisionCalc.h" />
+    <ClInclude Include="ObstacleBox.h" />
     <ClInclude Include="PlayerInput.h" />
     <ClInclude Include="ShareClass.h" />
     <ClInclude Include="Spere.h" />

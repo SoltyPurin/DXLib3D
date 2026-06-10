@@ -14,7 +14,7 @@ public:
 	//アクティブな銃弾の無効化
 	void DeActiveBullet(int index);
 private:
-	std::unique_ptr<Bullet> _plBullets[1000];
+	std::vector<std::unique_ptr<Bullet>> _plBullets;
 	const int BULLET_MAX = 1000;
 	float _bulletCoolTime = 1.0f;
 	float _currentCoolTime = 0.0f;
