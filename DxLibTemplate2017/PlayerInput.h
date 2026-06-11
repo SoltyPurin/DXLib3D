@@ -16,7 +16,7 @@ private:
 	float _mouseSensitivity = 0.005f;
 	float _yaw, _pitch;
 	int _input;
-	float _playerSpeed = 5.0f;
+	float _playerSpeed = 50.0f;
 	char _keys[256];
 
 };

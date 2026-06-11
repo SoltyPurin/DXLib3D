@@ -48,12 +48,25 @@ void Stage::CheckCollision() {
 		}
 	}
 	const auto& bullets = _bulletManager->GetBullets();
-	for (const auto& target : _targets) {
+	for (auto i = _targets.begin(); i != _targets.end();) {
+		bool isHit = false; // 弾に当たったかどうかのフラグ
+
 		for (const auto& bullet : bullets) {
-			if (_calc.BSCalcAABB(target->ReturnAABB(), bullet->ReturnBulletAABB()))
+			if (_calc.BSCalcAABB((*i)->ReturnAABB(), bullet->ReturnBulletAABB()))
 			{
-				printfDx("弾がターゲットに接触");
+				// ターゲットを削除し、次の要素を指すイテレータを受け取る
+				i = _targets.erase(i);
+				bullet->ColDead();
+
+				printfDx("弾がターゲットに接触\n");
+
+				isHit = true; // 当たったフラグを立てる
+				break;        // このターゲットは消えたので、残りの弾のループはスキップする
 			}
+		}
+
+		if (!isHit) {
+			i++;
 		}
 	}
 }
