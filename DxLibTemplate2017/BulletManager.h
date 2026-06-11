@@ -13,6 +13,9 @@ public:
 	void ActiveBullet(VECTOR spawnPos, VECTOR plLookDir);
 	//アクティブな銃弾の無効化
 	void DeActiveBullet(int index);
+	//銃弾のプールを返す
+	const std::vector<std::unique_ptr<Bullet>>& GetBullets() const { return _plBullets; }
+
 private:
 	std::vector<std::unique_ptr<Bullet>> _plBullets;
 	const int BULLET_MAX = 1000;

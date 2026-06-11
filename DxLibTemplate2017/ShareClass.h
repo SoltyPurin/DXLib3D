@@ -1,6 +1,6 @@
 #pragma once
 #include <DxLib.h>
-struct Sphere {
+struct SphereAABB {
 	VECTOR center;
 	float radius;
 };

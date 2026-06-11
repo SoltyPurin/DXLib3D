@@ -1,10 +1,10 @@
 #pragma once
 #include "DxLib.h"
-class Sphere
+class SphereAABB
 {
 public:
-	Sphere();
-	~Sphere();
+	SphereAABB();
+	~SphereAABB();
 	void Update();
 	void Draw();
 private:

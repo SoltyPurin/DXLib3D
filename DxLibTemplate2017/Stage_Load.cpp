@@ -40,6 +40,14 @@ void Stage::LoadCSV() {
 					), OBSTACLE_SIZE));
 					MAP_DATA[z][x] = 0;
 				}
+				if (MAP_DATA[z][x] == 2) {//2番は的とする
+					_targets.push_back(std::make_unique<Target>(VGet(
+						x * OBSTACLE_SIZE * OBSTACLE_SCALE,
+						-1 * OBSTACLE_SIZE * OBSTACLE_SCALE,
+						z * OBSTACLE_SIZE * OBSTACLE_SCALE
+					), OBSTACLE_SIZE));
+					MAP_DATA[z][x] = 0;
+				}
 			}
 			catch (const std::exception& e) {
 				// もし数字じゃないゴミ文字が入っていても、クラッシュさせずにスルーする

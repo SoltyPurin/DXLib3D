@@ -1,6 +1,7 @@
 #include "Stage.h"
 #include <DxLib.h>
-Stage::Stage(CameraMove* camera):
+Stage::Stage(CameraMove* camera,BulletManager* bulletManager):
+_bulletManager(bulletManager),
 _plCamera(camera){
 	_stageHandle = MV1LoadModel("Model/IronBridge_inTokyo.mqo");
 	MAP_DATA.resize(MAP_Z, std::vector<int>(MAP_X, 0));

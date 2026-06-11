@@ -3,13 +3,14 @@
 #include <vector>
 #include <memory>
 #include "ObstacleBox.h"
+#include "Target.h"
+class BulletManager;
 class CameraMove;
 class CollisionCalc;
-class CameraMove;
 class Stage
 {
 public:
-	Stage(CameraMove* camera);
+	Stage(CameraMove* camera,BulletManager* bullet);
 	~Stage();
 	void LoadModel();
 	void Update();
@@ -32,8 +33,10 @@ private:
 	int _stageHandle;
 	std::vector<std::vector<int>> MAP_DATA;
 	std::vector<std::unique_ptr<ObstacleBox>> _boxs;
+	std::vector<std::unique_ptr<Target>> _targets;
 	CameraMove* _plCamera;
 	CollisionCalc _calc;
+	BulletManager* _bulletManager;
 };
 
 

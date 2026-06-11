@@ -1,21 +1,12 @@
 #pragma once
 #include <DxLib.h>
-struct Sphere {
-	VECTOR center;
-	float radius;
-};
-
-struct AABB {
-	// ç∂â∫
-	VECTOR min;  
-	// âEè„
-	VECTOR max;  
-};
+#include "ShareClass.h"
 class CollisionCalc
 {
 public:
-	bool BoxCalcAABB(AABB a, AABB b);
-	bool SphereCalcAABB(Sphere a,Sphere b);
+	bool BoxCalcAABB(const AABB& a, const AABB& b);
+	bool SphereCalcAABB(const SphereAABB& a,const SphereAABB& b);
+	bool BSCalcAABB(const AABB& a, const SphereAABB& b);
 private:
 
 };

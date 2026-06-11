@@ -1,6 +1,8 @@
 #include "Stage.h"
 #include "CollisionCalc.h"
 #include "CameraMove.h"
+#include "BulletManager.h"
+#include "Bullet.h"
 void Stage::CheckCollision() {
 	for (auto i = _boxs.begin(); i != _boxs.end(); i++) {
 		if (_calc.BoxCalcAABB(_plCamera->ReturnAABB(), (*i)->ReturnAABB())) {
@@ -42,6 +44,15 @@ void Stage::CheckCollision() {
 				else {
 					_plCamera->PushXZ(0, pushZ);
 				}
+			}
+		}
+	}
+	const auto& bullets = _bulletManager->GetBullets();
+	for (const auto& target : _targets) {
+		for (const auto& bullet : bullets) {
+			if (_calc.BSCalcAABB(target->ReturnAABB(), bullet->ReturnBulletAABB()))
+			{
+				printfDx("弾がターゲットに接触");
 			}
 		}
 	}

@@ -1,6 +1,7 @@
 #pragma once
 #include <DxLib.h>
 #include "ShareClass.h"
+#include "CollisionCalc.h"
 class BulletManager;
 class Bullet
 {
@@ -11,9 +12,11 @@ public:
 	void Draw();
 	void Gravity();
 	bool IsDead() { return _isDead; }
+    const SphereAABB ReturnBulletAABB() { return _sphereAABB; }
 private:
 	VECTOR _currentPos;
 	VECTOR _moveDirection;
+	SphereAABB _sphereAABB;
 	BulletManager& _bulletManager;
 	float _gravityPower = 5.5f;
 	float _bulletSpeed = 10;

@@ -1,17 +1,17 @@
 #include "Spere.h"
 
-Sphere::Sphere() {
+SphereAABB::SphereAABB() {
 
 }
 
-Sphere::~Sphere() {
+SphereAABB::~SphereAABB() {
 
 }
 
-void Sphere::Update() {
+void SphereAABB::Update() {
 
 }
 
-void Sphere::Draw() {
+void SphereAABB::Draw() {
 	DrawSphere3D(_centerPos, radius, _divNum, GetColor(255, 0, 0), GetColor(0, 0, 0), FALSE);
 }

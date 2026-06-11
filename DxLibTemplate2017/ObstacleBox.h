@@ -7,9 +7,9 @@ public:
 	ObstacleBox(VECTOR pos,int size);
 	~ObstacleBox();
 	void Update();
-	void Draw();
+	virtual void Draw();
 	AABB ReturnAABB() { return _boxAABB; }
-private:
+protected:
 	int _boxSize;
 	AABB _boxAABB;
 };
