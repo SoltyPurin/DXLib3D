@@ -1,7 +1,8 @@
 #include "CameraMove.h"
 #include "Vector2.h"
 #include <DxLib.h>
-CameraMove::CameraMove() {
+CameraMove::CameraMove()
+{
 
 }
 
@@ -35,6 +36,20 @@ void CameraMove::CameraMoveInput(VECTOR moveValue, VECTOR mousePos) {
     float lookX = _cameraPos.x + _flontX;
     float lookY = _cameraPos.y + _flontY;
     float lookZ = _cameraPos.z + _flontZ;
+    _cameraCollision.min = _cameraPos;
+    _cameraCollision.max = VGet(_cameraPos.x + _horizontalSize,
+        _cameraPos.y + _verticalSize,
+        _cameraPos.z + _horizontalSize);
 
 	SetCameraPositionAndTarget_UpVecY(_cameraPos, VGet(lookX, lookY, lookZ));
+}
+
+void CameraMove::PushXZ(float x, float z) {
+    _cameraPos.x += x;
+    _cameraPos.z += z;
+    _cameraCollision.min = _cameraPos;
+    _cameraCollision.max = VGet(_cameraPos.x + _horizontalSize,
+        _cameraPos.y + _verticalSize,
+        _cameraPos.z + _horizontalSize);
+
 }

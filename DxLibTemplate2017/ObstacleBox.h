@@ -4,12 +4,13 @@
 class ObstacleBox
 {
 public:
-	ObstacleBox(VECTOR pos);
+	ObstacleBox(VECTOR pos,int size);
 	~ObstacleBox();
 	void Update();
 	void Draw();
+	AABB ReturnAABB() { return _boxAABB; }
 private:
-	int _boxSize = 50;
+	int _boxSize;
 	AABB _boxAABB;
 };
 

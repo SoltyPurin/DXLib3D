@@ -1,8 +1,10 @@
 #include "Stage.h"
 #include <DxLib.h>
-Stage::Stage() {
+Stage::Stage(CameraMove* camera):
+_plCamera(camera){
 	_stageHandle = MV1LoadModel("Model/IronBridge_inTokyo.mqo");
-	MV1SetPosition(_stageHandle, VGet(0, 0, 0));
+	MAP_DATA.resize(MAP_Z, std::vector<int>(MAP_X, 0));
+	MV1SetPosition(_stageHandle, VGet(5000, 0, 5000));
 }
 
 Stage::~Stage() {

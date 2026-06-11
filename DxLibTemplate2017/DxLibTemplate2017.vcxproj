@@ -135,6 +135,7 @@
     <ClCompile Include="PlayerInput.cpp" />
     <ClCompile Include="ShareClass.cpp" />
     <ClCompile Include="Spere.cpp" />
+    <ClCompile Include="Stage_Collision.cpp" />
     <ClCompile Include="Stage_Initializer.cpp" />
     <ClCompile Include="Stage_Load.cpp" />
     <ClCompile Include="Stage_Update.cpp" />
